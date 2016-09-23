@@ -1,0 +1,196 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>CodeBarraWeb</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+    @Styles.Render("~/bootstrapPopup/css")
+    @Styles.Render("~/Estilos/css")
+
+</head>
+<body >
+    <div id="divPrincipal">
+        <div class="row bg-blue">
+            <div class="col-md-2">
+                <h4><img src="~/Imagenes/logoAgp.jpg" /></h4>
+            </div>
+            <div class="col-md-2">
+                <h3><strong>PRODUCTO</strong></h3>
+                <h4><strong>APROBADO</strong></h4>
+            </div>
+            <div class="col-md-1">
+                <h3><strong>DIA</strong></h3>
+                <h4><strong><span id="spnDia"></span></strong></h4>
+            </div>
+            <div class="col-md-1">
+                <h3><strong>MES</strong></h3>
+                <h4><strong><span id="spnMes"></span></strong></h4>
+            </div>
+            <div class="col-md-1">
+                <h3><strong>YIELD</strong></h3>
+                <h4><strong><span id="spnYield"></span></strong></h4>
+            </div>
+            <div class="col-md-2">
+                <h3><strong>OBJETIVO</strong></h3>
+                <h4><strong><span id="spnObjetivo"></span></strong></h4>
+            </div>
+            <div class="col-md-1">
+                <h3><strong>REAL</strong></h3>
+                <h4><strong><span id="spnReal"></span></strong></h4>
+            </div>
+            <div id="divCumplimiento" class="col-md-2 bg-green">
+                <h3><strong>CUMPLIMIENTO</strong></h3>
+                <h1><strong><span id="spnCumplimiento"></span></strong></h1>
+            </div>
+        </div>
+
+        <div>
+            <table>
+                <tr class="info">
+                    <td style="width:40% ;vertical-align:middle">
+                        <h3><strong>AREA </strong></h3>
+                    </td>
+                    <td style="width:40% ;vertical-align:middle; text-align:center">
+                        <h3><strong>MODELO</strong></h3>
+                    </td>
+                    <td style="width:20% ;vertical-align:middle;text-align:center">
+                        <h3><strong>Actualizado a las</strong></h3>
+                    </td>
+                </tr>
+                <tr class="info">
+                    <td style="width:40% ;vertical-align:middle">
+                        <h3><strong><span id="spnArea"></span></strong></h3>
+                    </td>
+                    <td style="width:40% ;vertical-align:middle; text-align:center">
+                        <h3><strong><span id="spnModelo"></span></strong></h3>
+                    </td>
+                    <td style="width:20% ;vertical-align:middle;text-align:center">
+                        <h3><strong><span id="spnFecha"></span></strong></h3>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="row-border">
+            <table class="table table-bordered">
+                <tr class="bg-black-active">
+                    <td style="width:5% ;vertical-align:middle">
+                        <h3><strong>PERIODO </strong></h3>
+                    </td>
+                    <td style="width:45% ;vertical-align:middle; text-align:center">
+                        <h3><strong>VOLUMEN</strong></h3>
+                    </td>
+                    <td style="width:45% ;vertical-align:middle;text-align:center">
+                        <h3><strong>YIELD</strong></h3>
+                    </td>
+                </tr>
+
+                <tr class="bg-black-active">
+                    <td style="width:5% ;vertical-align:middle">
+                        <h5><img src="~/Imagenes/Periodo.jpg" width="20" height="20" / ></h5>
+
+                    </td>
+                    <td style="width:45% ;vertical-align:middle; text-align:center">
+                        <h5><img src="~/Imagenes/Volumen.jpg" width="20" height="20" /></h5>
+                    </td>
+                    <td style="width:45% ;vertical-align:middle;text-align:center">
+                        <h5><img src="~/Imagenes/Yield.jpg" width="20" height="20" /></h5>
+                    </td>
+                </tr>
+                <tr class="bg-info">
+                    <td style="width:5% ;vertical-align:middle">
+                        <h3><strong><span id="sVTurno"></span></strong></h3>
+                    </td>
+                    <td style="width:45%">
+                        <div class="col-md-push-6">
+                            <div id="VTurObjetivo" class="small-box bg-aqua" style="width:95%">
+                                <h1><span id="sVTurObjetivo"></span></h1>
+                            </div>
+                            <div id="VTurReal" class="small-box bg-green" style="width:95%">
+                                <h1><span id="sVTurReal"></span></h1>
+                            </div>
+                        </div>
+                    </td>
+                    <td style="width:45%">
+                        <div class="col-md-push-6">
+                            <div id="YTurObjetivo" class="small-box bg-aqua" style="width:95%">
+                                <h1><span id="sYTurObjetivo"></span></h1>
+                            </div>
+                            <div id="YTurReal" class="small-box bg-green" style="width:95%">
+                                <h1><span id="sYTurReal"></span></h1>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr class="info">
+                    <td style="width:5% ;vertical-align:middle">
+                        <h3><strong><span id="sVDia"></span></strong></h3>
+                    </td>
+                    <td style="width:45%">
+                        <div class="col-md-push-6">
+                            <div id="VDiaObjetivo" class="small-box bg-aqua" style="width:95%">
+                                <h1><span id="sVDiaObjetivo"></span></h1>
+                            </div>
+                            <div id="VDiaReal" class="small-box bg-green" style="width:95%">
+                                <h1><span id="sVDiaReal"></span></h1>
+                            </div>
+                        </div>
+                    </td>
+                    <td style="width:45%">
+                        <div class="col-md-push-6">
+                            <div id="YDiaObjetivo" class="small-box bg-aqua" style="width:95%">
+                                <h1><span id="sYDiaObjetivo"></span></h1>
+                            </div>
+                            <div id="YDiaReal" class="small-box bg-green" style="width:95%">
+                                <h1><span id="sYDiaReal"></span></h1>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr class="info">
+                    <td style="width:5% ;vertical-align:middle">
+                        <h3><strong><span id="sVSemana"></span></strong></h3>
+                    </td>
+                    <td style="width:45%">
+                        <div class="col-md-push-6">
+                            <div id="VSemObjetivo" class="small-box bg-aqua" style="width:95%">
+                                <h1><span id="sVSemObjetivo"></span></h1>
+                            </div>
+                            <div id="VSemReal" class="small-box bg-green" style="width:95%">
+                                <h1><span id="sVSemReal"></span></h1>
+                            </div>
+                        </div>
+                    </td>
+                    <td style="width:45%">
+                        <div class="col-md-push-6">
+                            <div id="YSemObjetivo" class="small-box bg-aqua" style="width:95%">
+                                <h1><span id="sYSemObjetivo"></span></h1>
+                            </div>
+                            <div id="YSemReal" class="small-box bg-green" style="width:95%">
+                                <h1><span id="sYSemReal"></span></h1>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div id="divDetalle" class="container">
+        <img id="idImagen" src="" width="90%"   />
+    </div>
+
+    @Scripts.Render("~/Bootstrap/assets/js")
+    @Scripts.Render("~/ReportePopup/js")
+
+
+</body>
+</html>

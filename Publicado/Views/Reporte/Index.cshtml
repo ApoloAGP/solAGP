@@ -1,0 +1,165 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section Menu {
+    @Styles.Render("~/JQGrid/css")
+}
+
+<div class="container">
+    <!-- Docs nav ================================================== -->
+    <div class="row">
+        <div class="span3 bs-docs-sidebar">
+            <ul class="nav nav-list bs-docs-sidenav">
+                <li><a href="#ListadoProceso"><i class="icon-chevron-right"></i>Configuración Reporte</li>
+            </ul>
+        </div>
+        <div class="span9">
+            <!-- Download ================================================== -->
+            <!-- Tabs -->
+            <section id="ListadoProceso">
+                <div class="page-header">
+                    <h1>Reporte</h1>
+                </div>
+                <h2>Configuración Reporte</h2>
+                <!--Demo-->
+                <div id="tabs">
+                    <ul>
+                        <li><a href="#tabs-a">Listado Proceso</a></li>
+                        <li><a href="#tabs-b">Imagenes</a></li>
+                        <li><a href="#tabs-c">Procesos</a></li>
+                    </ul>
+                    <div id="tabs-a">
+                        <div id="divListado">
+                            <div class="ui-jqgrid" id="divgrid">
+                                <h4><strong><span id="spnMAC"></span></strong></h4>
+                                <table class="table" id="grid"></table>
+                                <div id="pager"></div>
+                            </div>
+                            </br>
+                            <table style="width:100%">
+                                <tr>
+                                    <td align="left">
+                                        <input class="ui-button-success" type="button" value="Tiempo Proceso" id="btnProceso" />
+                                        <input class="ui-button-success" type="button" value="Nueva Imagen" id="btnNuevo" />
+                                        <input class="ui-button-success" type="button" value="Modificar Imagen" id="btnModificar" />
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div id="tabs-b">
+                        <div  id="divImagen">
+                            <div id="divGrillaImagen">
+                                <table class="table" id="gridImagen"></table>
+                                <div id="pagerImagen"></div>
+                            </div>
+                            </br>
+                            <table>
+                                <tr>
+                                    <td><label>Proceso:</label></td>
+                                    <td><select class="form-control" id="ddlFEstado"></select></td>
+                                    <td><label>Imagen:</label></td>
+                                    <td><input type="file"  id="FileUpload"></td>
+                                </tr>
+                                <tr>
+                                    <td><label>Tiempo:</label></td>
+                                    <td><input type="text"  id="txtTiempo"></td>
+                                    <td><label>Orden:</label></td>
+                                    <td><input type="text"  id="txtOrden"></td>
+                                </tr>
+                                <tr>
+                                    <td><label>Tipo Archivo:</label></td>
+                                    <td>
+                                        <select class="form-control" id="ddlTipo">
+                                            <option selected="selected" value="01">IMAGEN</option>
+                                            <option value="02">VIDEO</option>
+                                        </select>
+                                    </td>
+                                    <td>Estado:</td>
+                                    <td>
+                                        <select class="form-control" id="ddlEstado">
+                                            <option selected="selected" value="A">Activo</option>
+                                            <option value="I">Inactivo</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                            </table>                            
+                        </div>
+                        </br>
+                        </br>
+                        <table style="width:100%">
+                            <tr>
+                                <td align="left">
+                                    <input class="ui-button-success" type="button" value="Agregar" id="btnGuardar" />
+                                    <input class="ui-button-success" type="button" value="Modificar" id="btnActualizar" />
+                                    <input class="ui-button-success" type="button" value="Cancelar" id="btnCancelar" />
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div id="tabs-c">
+                        <div id="divProceso">
+                            <table>
+                                <tr>
+                                    <td><label>Proceso:</label></td>
+                                    <td><select class="form-control" id="ddlProceso"></select></td>
+                                </tr>
+                                <tr>
+                                    <td><label>Tiempo:</label></td>
+                                    <td><input type="text" id="txtTiempoProceso"></td>
+                                </tr>
+                            </table>
+                        </div>
+                        </br>
+                        </br>
+                        <table style="width:100%">
+                            <tr>
+                                <td align="left">
+                                    <input class="ui-button-success" type="button" value="Aceptar" id="btnAceptar" />
+                                    <input class="ui-button-success" type="button" value="Cancelar" id="btnRegresa" />
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                </div>
+                <!-- End tabs -->
+            </section>
+            </br>
+            </br>
+            </br>
+            </br>
+            </br>
+            </br>
+            </br>
+            </br>
+            </br>
+            </br>
+            </br>
+            </br>
+            </br>
+            </br>
+            </br>
+            </br>
+            </br>
+            </br>
+            </br>
+            </br>
+            </br>
+            </br>
+            </br>
+            </br>
+            </br>
+        </div>
+    </div>
+
+</div>
+
+@section Scripts {
+
+    @Scripts.Render("~/JQGrid/js")
+    @Scripts.Render("~/Script/Reporte/js")
+
+}
+
+
