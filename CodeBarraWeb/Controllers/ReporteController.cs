@@ -33,10 +33,10 @@ namespace CodeBarraWeb.Controllers
                 string macAddresses = "", lnsUsuario = "";
                 BLAdmin admin = new BLAdmin();
                 macAddresses = System.Web.HttpContext.Current.Request.UserHostAddress;
-
+                //macAddresses = "172.17.4.251";
                 lnsUsuario = admin.ObtenerUsuario(macAddresses);
 
-                if (lnsUsuario!="")
+                if (lnsUsuario.Trim()!="XXXX")
                 {
                     Session["Usuario"] = lnsUsuario;
                     ReporteProduccionModelo rp = new ReporteProduccionModelo();
@@ -60,10 +60,9 @@ namespace CodeBarraWeb.Controllers
                 string macAddresses = "", lnsUsuario = "";
                 BLAdmin admin = new BLAdmin();
                 macAddresses = System.Web.HttpContext.Current.Request.UserHostAddress;
-
                 lnsUsuario = admin.ObtenerUsuario(macAddresses);
 
-                if (lnsUsuario != "")
+                if (lnsUsuario.Trim() != "XXXX")
                 {
                     Session["Usuario"] = lnsUsuario;
                     ReporteProduccionModelo rp = new ReporteProduccionModelo();
@@ -210,6 +209,14 @@ namespace CodeBarraWeb.Controllers
                 bereporteimagen.Usuario = Session["Usuario"].ToString().Trim();
                 if (bereporteimagen.Codigo != 0)
                     strRespuesta = blreporte.ModificarImagenProceso(bereporteimagen);
+
+                if (bereporteimagen.AudEstado =="I" && bereporteimagen.CodProceso=="99")
+                {
+                    var path = Server.MapPath("~/Imagenes");
+                    var fullPath = Path.Combine(path, bereporteimagen.Ruta);
+                    if (System.IO.File.Exists(fullPath)) System.IO.File.Delete(fullPath);
+                }
+
                 else
                     strRespuesta = blreporte.AgregarImagenProceso(bereporteimagen);
             }
@@ -357,13 +364,13 @@ namespace CodeBarraWeb.Controllers
 
         // Actualiza Tiempo Proceso
         [HttpPost]
-        public JsonResult ActualizarTiempoProceso(string Proceso, int Tiempo)  //Gets the todo Lists.
+        public JsonResult ActualizarTiempoProceso(string Proceso, int Tiempo,string Iptv)  //Gets the todo Lists.
         {
             string strRespuesta = "";
             try
             {
                 BLReporte blreporte = new BLReporte();
-                strRespuesta = blreporte.ActualizarTiempoProceso(Proceso, Tiempo);
+                strRespuesta = blreporte.ActualizarTiempoProceso(Proceso, Tiempo, Iptv);
 
             }
             catch (Exception ex)

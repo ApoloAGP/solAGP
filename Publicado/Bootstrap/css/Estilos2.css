@@ -4098,4 +4098,15 @@ overflow:auto;
 .table-responsive>.table tr th,.table-responsive>.table tr td {
 white-space:normal!important;
 }
+
+
+.containerimg {
+width: 98%;
+max-width: 960px;
+margin: 0 auto;
+}
+img {
+width: 100%;
+height: auto;
+}
 }

@@ -51,7 +51,7 @@ namespace CodeBarraDA
                 using (Database db = new Database(DatabaseHelper.ConexionDataSistemas))
                 {
                     db.ProcedureName = @"PA_ConsultaUsuarioReporteIP";
-                    db.AddParameter("@ip", SqlDbType.VarChar, ParameterDirection.Input, IP);
+                    db.AddParameter("@iptv", SqlDbType.VarChar, ParameterDirection.Input, IP);
 
                     dr = db.GetDataReader();
                     while (dr.Read())

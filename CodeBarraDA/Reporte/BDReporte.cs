@@ -182,7 +182,7 @@ namespace CodeBarraDA
             return result;
         }
 
-        public string ActualizarTiempoProceso(string Proceso, int Tiempo)
+        public string ActualizarTiempoProceso(string Proceso, int Tiempo,string ip)
         {
             string result = "";
             try
@@ -193,6 +193,7 @@ namespace CodeBarraDA
                     db.ProcedureName = "PA_Mod_TiempoProceso";
                     db.AddParameter("@Proceso", SqlDbType.VarChar, ParameterDirection.Input, Proceso);
                     db.AddParameter("@Tiempo", SqlDbType.Int, ParameterDirection.Input,Tiempo );
+                    db.AddParameter("@Ip", SqlDbType.VarChar, ParameterDirection.Input, ip);
                     dr = db.GetDataReader();
                     while (dr.Read())
                     {
@@ -256,6 +257,7 @@ namespace CodeBarraDA
                     db.ProcedureName = "PA_Mod_ReporteProcesoImagen";
                     db.AddParameter("@Codigo", SqlDbType.VarChar, ParameterDirection.Input, beprocesoimagen.Codigo);
                     db.AddParameter("@Ruta", SqlDbType.VarChar, ParameterDirection.Input, beprocesoimagen.Ruta);
+                    db.AddParameter("@CodProceso", SqlDbType.VarChar, ParameterDirection.Input, beprocesoimagen.CodProceso);
                     db.AddParameter("@Tiempo", SqlDbType.VarChar, ParameterDirection.Input, beprocesoimagen.Tiempo);
                     db.AddParameter("@Orden", SqlDbType.Int, ParameterDirection.Input, beprocesoimagen.Orden);
                     db.AddParameter("@Tipo", SqlDbType.VarChar, ParameterDirection.Input, beprocesoimagen.Tipo);

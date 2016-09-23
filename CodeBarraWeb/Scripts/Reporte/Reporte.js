@@ -69,6 +69,12 @@ function ValidarTiempo() {
         $("#txtTiempoProceso").focus();
         return false;
     }
+
+    if ($("#txtIP").val() == '') {
+        lnsRespuesta = 'FALLO Debe ingresar la IP';
+        $("#txtIP").focus();
+        return false;
+    }
 }
 function Grabar() {
     if (Validar() == false) {
@@ -103,16 +109,17 @@ function GrabarTiempo() {
     if (ValidarTiempo() == false) {
         return false;
     }
-    var proc = "";
+    var proc = "",Ip="";
     var tpo = 0;
     tpo = $("#txtTiempoProceso").val();
+    Ip = $("#txtIP").val();
     proc = $("#ddlProceso").val();
     $.ajax(
     {
         type: "POST",
         url: "/Reporte/ActualizarTiempoProceso",
         contentType: "application/json",
-        data: JSON.stringify({ Proceso: proc, Tiempo: tpo }),
+        data: JSON.stringify({ Proceso: proc, Tiempo: tpo, Iptv: Ip }),
         processData: false,
         success:
         function (resultado) {
@@ -127,7 +134,7 @@ function CargarData() {
         var rowdata = $("#grid").getRowData(id);
         fetchGridData(rowdata["CodProceso"]);
         //$('#ddlFEstado').prop('disabled', false);
-        $('#ddlFEstado').prop('disabled', 'disabled');
+        //$('#ddlFEstado').prop('disabled', 'disabled');
         $("#ddlFEstado").val(rowdata["CodProceso"]);
         $("#divListado").hide();
         $("#divProceso").hide();
@@ -149,6 +156,8 @@ function CargarDataProceso() {
         fetchGridData(rowdata["CodProceso"]);
         //$('#ddlFEstado').prop('disabled', false);
         $("#ddlProceso").val(rowdata["CodProceso"]);
+        $("#txtIP").val(rowdata["RutaImagen"]);
+        $("#txtTiempoProceso").val(rowdata["Periodo"]);
         $("#divListado").hide();
         $("#divGrillaImagen").hide();
         $("#divProceso").show();
@@ -326,7 +335,7 @@ function Limpiar() {
 
 $(function () {
 
-    //RecuperarMac();
+    RecuperarMac();
     
     $("#tabs").tabs({ disabled: [1] });
     $("#tabs").tabs({ disabled: [2] });
@@ -446,7 +455,7 @@ $(function () {
         url: "/Reporte/MostrarProceso",
         datatype: 'json',
         mtype: 'Get',
-        colNames: ['CodProceso','Usuario', 'Ruta', 'Proceso', 'Producto', 'Periodo' ],
+        colNames: ['CodProceso','Usuario', 'IP', 'Proceso', 'Producto', 'Periodo' ],
         colModel: [
             { key: true, hidden: true, name: 'CodProceso', index: 'CodProceso', editable: true },
             { key: false, name: 'Usuario', index: 'Usuario', editable: true },

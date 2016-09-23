@@ -200,13 +200,13 @@ namespace CodeBarraBL
             return strRespuesta;
         }
 
-        public string ActualizarTiempoProceso(string Proceso, int tiempo)
+        public string ActualizarTiempoProceso(string Proceso, int tiempo,string Ip)
         {
 
             string strRespuesta = "";
             try
             {
-                strRespuesta = bdreporte.ActualizarTiempoProceso(Proceso, tiempo);
+                strRespuesta = bdreporte.ActualizarTiempoProceso(Proceso, tiempo,Ip);
             }
             catch
             {
