@@ -9,6 +9,7 @@ namespace CodeBarraWeb
 
             RegistrarLayout(bundles);
             RegistrarReporte(bundles);
+            RegistraLogin(bundles);
             BundleTable.EnableOptimizations = false;
 
         }
@@ -74,6 +75,13 @@ namespace CodeBarraWeb
             // Reporte PEN
             bundles.Add(new ScriptBundle("~/ReportePen/js").Include(
                 "~/Scripts/ReportePen/ReportePen.js"));
+        }
+
+
+        private static void RegistraLogin(BundleCollection bundles)
+        {
+            bundles.Add(new ScriptBundle("~/Login/js").Include(
+                "~/Scripts/Login/Login.js"));
         }
     }
 }

@@ -22,24 +22,30 @@ namespace CodeBarraWeb.Models
             public string YTurObjetivoPor { get; set; }
             public string VTurRealDes { get; set; }
             public string VTurRealPor { get; set; }
+            public string VTurRealColor { get; set; }
             public string YTurRealDes { get; set; }
             public string YTurRealPor { get; set; }
+            public string YTurRealColor { get; set; }
             public string VDiaObjetivoDes { get; set; }
             public string VDiaObjetivoPor { get; set; }
             public string YDiaObjetivoDes { get; set; }
             public string YDiaObjetivoPor { get; set; }
             public string VDiaRealDes { get; set; }
             public string VDiaRealPor { get; set; }
+            public string VDiaRealColor { get; set; }
             public string YDiaRealDes { get; set; }
             public string YDiaRealPor { get; set; }
+            public string YDiaRealColor { get; set; }
             public string VSemObjetivoDes { get; set; }
             public string VSemObjetivoPor { get; set; }
             public string YSemObjetivoDes { get; set; }
             public string YSemObjetivoPor { get; set; }
             public string VSemRealDes { get; set; }
             public string VSemRealPor { get; set; }
+            public string VSemRealColor { get; set; }
             public string YSemRealDes { get; set; }
             public string YSemRealPor { get; set; }
+            public string YSemRealColor { get; set; }
             public string TurDet { get; set; }
             public string DiaDet { get; set; }
             public string SemDet { get; set; }

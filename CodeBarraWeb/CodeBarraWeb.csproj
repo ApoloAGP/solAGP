@@ -168,6 +168,7 @@
     <Content Include="Imagenes\Periodo.jpg" />
     <Content Include="Imagenes\Volumen.jpg" />
     <Content Include="Imagenes\Yield.jpg" />
+    <Content Include="Scripts\Login\Login.js" />
     <Content Include="Scripts\ReportePen\ReportePen.js" />
     <Content Include="Scripts\Reporte\Reporte.js" />
     <Content Include="Scripts\Reporte\ReportePopup.js" />

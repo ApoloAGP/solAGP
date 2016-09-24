@@ -41,17 +41,13 @@ namespace CodeBarraBL
                 beLstDetalle = ReporteDetalle(Linea, Proceso, Producto);
                 if (beCabecera!=null)
                 {
-                    int intCumplimiento = 0;
                     bereportecompleto.Dia = beCabecera.Dia;
                     bereportecompleto.Mes = beCabecera.Semana;
                     bereportecompleto.Yield = beCabecera.Yield;
                     bereportecompleto.Objetivo = beCabecera.MetaAhora;
                     bereportecompleto.Real = beCabecera.RealAhora;
                     bereportecompleto.Cumplimiento = beCabecera.Cumplimiento;
-                    intCumplimiento = Convert.ToInt32(beCabecera.Cumplimiento.Replace('%', ' ').Trim());
-                    if (intCumplimiento <= 80) bereportecompleto.ColorCumplimiento = "col-md-2 bg-red";
-                    if (intCumplimiento >= 81 && intCumplimiento <= 95) bereportecompleto.ColorCumplimiento = "col-md-2 bg-yellow";
-                    if (intCumplimiento >= 96) bereportecompleto.ColorCumplimiento = "col-md-2 bg-green";
+                    bereportecompleto.ColorCumplimiento = Semaforo(beCabecera.Cumplimiento, "2");
                 }
 
                 if (beLstDetalle!=null)
@@ -75,6 +71,8 @@ namespace CodeBarraBL
                                 if (Convert.ToInt32(bereportecompleto.VTurRealPor) > 100) bereportecompleto.VTurRealPor = "100";
                                 if (bereportecompleto.YTurObjetivoPor == "0%") bereportecompleto.YTurObjetivoPor = "30%";
                                 if(bereportecompleto.YTurRealPor == "0%") bereportecompleto.YTurRealPor = "30%";
+                                bereportecompleto.VTurRealColor = Semaforo(bereportecompleto.VTurRealPor, "1");
+                                bereportecompleto.YTurRealColor  = Semaforo(bereportecompleto.YTurRealPor, "1");
                                 bereportecompleto.TurnoDet ="T"+ beDetalle.Turno;
                                 break;
                             case "2":
@@ -92,6 +90,8 @@ namespace CodeBarraBL
                                 if (Convert.ToInt32(bereportecompleto.VDiaRealPor) > 100) bereportecompleto.VDiaRealPor = "100";
                                 if (bereportecompleto.YDiaObjetivoPor == "0%") bereportecompleto.YDiaObjetivoPor = "30%";
                                 if (bereportecompleto.YDiaRealPor == "0%") bereportecompleto.YDiaRealPor = "30%";
+                                bereportecompleto.VDiaRealColor = Semaforo(bereportecompleto.VDiaRealPor, "1");
+                                bereportecompleto.YDiaRealColor = Semaforo(bereportecompleto.YDiaRealPor, "1");
                                 bereportecompleto.DiaDet = "D" + beDetalle.Dia;
                                 break;
                             case "3":
@@ -109,6 +109,8 @@ namespace CodeBarraBL
                                 if (Convert.ToInt32(bereportecompleto.VSemRealPor) > 100) bereportecompleto.VSemRealPor = "100";
                                 if (bereportecompleto.YSemObjetivoPor == "0%") bereportecompleto.YSemObjetivoPor = "30%";
                                 if (bereportecompleto.YSemRealPor == "0%") bereportecompleto.YSemRealPor = "30%";
+                                bereportecompleto.VSemRealColor = Semaforo(bereportecompleto.VSemRealPor, "1");
+                                bereportecompleto.YSemRealColor = Semaforo(bereportecompleto.YSemRealPor, "1");
                                 bereportecompleto.SemDet = "S" + beDetalle.Semana;
                                 break;
                         }
@@ -127,6 +129,28 @@ namespace CodeBarraBL
             return bereportecompleto;
         }
 
+        private string Semaforo(string Valor,string tipo)
+        {
+            string ColorSemaforo = "";
+            int intCumplimiento = 0;
+            intCumplimiento = Convert.ToInt32(Valor.Replace('%', ' ').Trim());
+            switch (tipo)
+            {
+                case "1":
+                    if (intCumplimiento <= 80) ColorSemaforo = "small-box bg-red";
+                    if (intCumplimiento >= 81 && intCumplimiento <= 95) ColorSemaforo = "small-box bg-yellowClaro";
+                    if (intCumplimiento >= 96) ColorSemaforo = "small-box bg-green";
+                    break;
+                case "2":
+                    if (intCumplimiento <= 80) ColorSemaforo = "col-md-2 bg-red";
+                    if (intCumplimiento >= 81 && intCumplimiento <= 95) ColorSemaforo = "col-md-2 bg-yellowClaro";
+                    if (intCumplimiento >= 96) ColorSemaforo = "col-md-2 bg-green";
+                    break;
+            }
+
+
+            return ColorSemaforo;
+        }
         private BEReporteCabecera ReporteCabecera(string Linea, string Proceso, string Producto)
         {
             BEReporteCabecera beCabecera = new BEReporteCabecera();

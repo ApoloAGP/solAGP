@@ -25,24 +25,30 @@ namespace CodeBarraBE
         private string _YTurObjetivoPor;
         private string _VTurRealDes;
         private string _VTurRealPor;
+        private string _VTurRealColor;
         private string _YTurRealDes;
         private string _YTurRealPor;
+        private string _YTurRealColor;
         private string _VDiaObjetivoDes;
         private string _VDiaObjetivoPor;
         private string _YDiaObjetivoDes;
         private string _YDiaObjetivoPor;
         private string _VDiaRealDes;
         private string _VDiaRealPor;
+        private string _VDiaRealColor;
         private string _YDiaRealDes;
         private string _YDiaRealPor;
+        private string _YDiaRealColor;
         private string _VSemObjetivoDes;
         private string _VSemObjetivoPor;
         private string _YSemObjetivoDes;
         private string _YSemObjetivoPor;
         private string _VSemRealDes;
         private string _VSemRealPor;
+        private string _VSemRealColor;
         private string _YSemRealDes;
         private string _YSemRealPor;
+        private string _YSemRealColor;
         private string _Turdet;
         private string _DiaDet;
         private string _SemDet;
@@ -141,6 +147,11 @@ namespace CodeBarraBE
             get { return _VTurRealPor; }
             set { _VTurRealPor = value; }
         }
+        public string VTurRealColor
+        {
+            get { return _VTurRealColor; }
+            set { _VTurRealColor = value; }
+        }
 
         public string YTurRealDes
         {
@@ -152,6 +163,12 @@ namespace CodeBarraBE
         {
             get { return _YTurRealPor; }
             set { _YTurRealPor = value; }
+        }
+
+        public string YTurRealColor
+        {
+            get { return _YTurRealColor; }
+            set { _YTurRealColor = value; }
         }
 
         public string VDiaObjetivoDes
@@ -190,6 +207,12 @@ namespace CodeBarraBE
             set { _VDiaRealPor = value; }
         }
 
+        public string VDiaRealColor
+        {
+            get { return _VDiaRealColor; }
+            set { _VDiaRealColor = value; }
+        }
+
         public string YDiaRealDes
         {
             get { return _YDiaRealDes; }
@@ -200,6 +223,12 @@ namespace CodeBarraBE
         {
             get { return _YDiaRealPor; }
             set { _YDiaRealPor = value; }
+        }
+
+        public string YDiaRealColor
+        {
+            get { return _YDiaRealColor; }
+            set { _YDiaRealColor = value; }
         }
 
         public string VSemObjetivoDes
@@ -238,6 +267,12 @@ namespace CodeBarraBE
             set { _VSemRealPor = value; }
         }
 
+        public string VSemRealColor
+        {
+            get { return _VSemRealColor; }
+            set { _VSemRealColor = value; }
+        }
+
         public string YSemRealDes
         {
             get { return _YSemRealDes; }
@@ -248,6 +283,12 @@ namespace CodeBarraBE
         {
             get { return _YSemRealPor; }
             set { _YSemRealPor = value; }
+        }
+
+        public string YSemRealColor
+        {
+            get { return _YSemRealColor; }
+            set { _YSemRealColor = value; }
         }
 
         public string TurnoDet

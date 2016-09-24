@@ -180,14 +180,28 @@
                 </div>
             </div>
 
-            <div id="divDetalle" class="container">
+            @*<div id="divDetalle" class="container">
                 <img id="idImagen" src="" width="100%" />
+            </div>*@
+
+            <div id="divDetalle" class="containerimg">
+                <div>
+                    <img id="idImagenSup" src="~/Imagenes/franja_Blanca.jpg" />
+                </div>
+                <div>
+                    <img id="idImagen" src="" width="1350" height="650" />
+                </div>
+
+                <div>
+                    <img id="idImagenInf" src="~/Imagenes/franja_Blanca.jpg" />
+                </div>
             </div>
         </section>
 </div>
 </div>
     @section Scripts {
         @Scripts.Render("~/Bootstrap/assets/js")
-        @Scripts.Render("~/ReporteTV/js")
+        @Scripts.Render("~/ReportePopup/js")
+        @*@Scripts.Render("~/ReporteTV/js")*@
 
     }

@@ -35,5 +35,14 @@ namespace CodeBarraWeb.Controllers
                     return View("Login");
             }
         }
+
+        public JsonResult GetMAC()
+        {
+            string macAddresses = "";
+
+            macAddresses = System.Web.HttpContext.Current.Request.UserHostAddress;
+            return Json(macAddresses);
+        }
+
     }
 }

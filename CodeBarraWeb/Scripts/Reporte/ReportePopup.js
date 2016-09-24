@@ -110,9 +110,10 @@ $(document).ready(function () {
             function (resultado) {
 
                 // ---- Cabecera
-                $("#divCumplimiento").removeClass("col-md-2 bg-green");
-
+                var clsCumplimiento = $("#divCumplimiento").attr("class");
+                $("#divCumplimiento").removeClass(clsCumplimiento);
                 $("#divCumplimiento").addClass(resultado.ColorCumplimiento);
+
                 $('#spnDia').text(resultado.Dia);
                 $('#spnMes').text(resultado.Mes);
                 $('#spnYield').text(resultado.Yield);
@@ -131,30 +132,60 @@ $(document).ready(function () {
                 $('#VTurObjetivo').css('width', resultado.VTurObjetivoPor + '%');
                 $('#sVTurObjetivo').text(resultado.VTurObjetivoDes);
                 $('#VTurReal').css('width', resultado.VTurRealPor + '%');
+                /*
+                var clsVTurReal = $("#VTurReal").attr("class");
+                $("#VTurReal").removeClass(clsVTurReal);
+                $("#VTurReal").addClass(resultado.VTurRealColor);*/
+
                 $('#sVTurReal').text(resultado.VTurRealDes);
                 $('#YTurObjetivo').css('width', resultado.YTurObjetivoPor);
-                $('#sYTurObjetivo').text(resultado.YTurObjetivoDes);
+                $('#sYTurObjetivo').text(resultado.YTurObjetivoDes);               
+
+                var clsYTurReal = $("#YTurReal").attr("class");
+                $("#YTurReal").removeClass(clsYTurReal);
+                $("#YTurReal").addClass(resultado.YTurRealColor);
                 $('#YTurReal').css('width', resultado.YTurRealPor);
+
                 $('#sYTurReal').text(resultado.YTurRealDes);
 
                 // ---- Dia
                 $('#VDiaObjetivo').css('width', resultado.VDiaObjetivoPor + '%');
                 $('#sVDiaObjetivo').text(resultado.VDiaObjetivoDes);
                 $('#VDiaReal').css('width', resultado.VDiaRealPor + '%');
+                /*
+                var clsVDiaReal = $("#VDiaReal").attr("class");
+                $("#VDiaReal").removeClass(clsVDiaReal);
+                $("#VDiaReal").addClass(resultado.VDiaRealColor);*/
+
                 $('#sVDiaReal').text(resultado.VDiaRealDes);
                 $('#YDiaObjetivo').css('width', resultado.YDiaObjetivoPor);
                 $('#sYDiaObjetivo').text(resultado.YDiaObjetivoDes);
+                
+                var clsYDiaReal = $("#YDiaReal").attr("class");
+                $("#YDiaReal").removeClass(clsYDiaReal);
+                $("#YDiaReal").addClass(resultado.YDiaRealColor);
                 $('#YDiaReal').css('width', resultado.YDiaRealPor);
+
                 $('#sYDiaReal').text(resultado.YDiaRealDes);
 
                 // ---- Semana
                 $('#VSemObjetivo').css('width', resultado.VSemObjetivoPor + '%');
                 $('#sVSemObjetivo').text(resultado.VSemObjetivoDes);
                 $('#VSemReal').css('width', resultado.VSemRealPor + '%');
+                /*
+                var clsVSemReal = $("#VSemReal").attr("class");
+                $("#VSemReal").removeClass(clsVSemReal);
+                $("#VSemReal").addClass(resultado.VSemRealColor);*/
+
                 $('#sVSemReal').text(resultado.VSemRealDes);
                 $('#YSemObjetivo').css('width', resultado.YSemObjetivoPor);
                 $('#sYSemObjetivo').text(resultado.YSemObjetivoDes);
+                
+                var clsYSemReal = $("#YSemReal").attr("class");
+                $("#YSemReal").removeClass(clsYSemReal);
+                $("#YSemReal").addClass(resultado.YSemRealColor);
                 $('#YSemReal').css('width', resultado.YSemRealPor);
+
                 $('#sYSemReal').text(resultado.YSemRealDes);
 
             },

@@ -21,6 +21,7 @@
     <div class="login-box">
         <div class="login-logo">
             <a href="@Url.Action("Index", "Reporte")">Bienvenido <b>CodeBarraWeb!</b></a>
+            <h4><strong><span id="spnMAC"></span></strong></h4>
         </div>
         <div class="login-box-body">
             <p class="login-box-msg">Ingresar su cuenta para iniciar sesión</p>
@@ -50,6 +51,7 @@
     </div>
 
     @Scripts.Render("~/Bootstrap/assets/js")
+    @Scripts.Render("~/Login/js")
     @*@Scripts.Render("~/ReportePopup/js")
     @Scripts.Render("~/Scripts/jquery/js")
     @Scripts.Render("~/bootstrap/js")

@@ -114,16 +114,20 @@ namespace CodeBarraWeb.Controllers
                         VTurObjetivoPor = beReporte.VTurObjetivoPor,
                         VTurRealDes = beReporte.VTurRealDes,
                         VTurRealPor = beReporte.VTurRealPor,
+                        VTurRealColor=beReporte.VTurRealColor,
 
                         VDiaObjetivoDes = beReporte.VDiaObjetivoDes,
                         VDiaObjetivoPor = beReporte.VDiaObjetivoPor,
                         VDiaRealDes = beReporte.VDiaRealDes,
                         VDiaRealPor = beReporte.VDiaRealPor,
+                        VDiaRealColor=beReporte.VDiaRealColor,
 
                         VSemObjetivoDes = beReporte.VSemObjetivoDes,
                         VSemObjetivoPor = beReporte.VSemObjetivoPor,
                         VSemRealDes = beReporte.VSemRealDes,
                         VSemRealPor = beReporte.VSemRealPor,
+                        VSemRealColor=beReporte.VSemRealColor,
+
 
                         // Yield
 
@@ -131,17 +135,20 @@ namespace CodeBarraWeb.Controllers
                         YTurObjetivoPor = beReporte.YTurObjetivoPor,
                         YTurRealDes = beReporte.YTurRealDes,
                         YTurRealPor = beReporte.YTurRealPor,
+                        YTurRealColor=beReporte.YTurRealColor,
 
                         YDiaObjetivoDes = beReporte.YDiaObjetivoDes,
                         YDiaObjetivoPor = beReporte.YDiaObjetivoPor,
                         YDiaRealDes = beReporte.YDiaRealDes,
                         YDiaRealPor = beReporte.YDiaRealPor,
+                        YDiaRealColor=beReporte.YDiaRealColor,
 
                         YSemObjetivoDes = beReporte.YSemObjetivoDes,
                         YSemObjetivoPor = beReporte.YSemObjetivoPor,
                         YSemRealDes = beReporte.YSemRealDes,
                         YSemRealPor = beReporte.YSemRealPor,
-
+                        YSemRealColor=beReporte.YSemRealColor,
+                        
                     }
                 };
             }
